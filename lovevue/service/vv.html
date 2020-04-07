@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="intxt"/>
+    <p id="txt"></p>
+</body>
+<script type="text/javascript">
+ let obj={}
+ Object.defineProperty(obj,"intxt",{
+     get(){
+         return obj
+     },
+     set(v){
+         //document.getElementById('intxt').value = v
+         document.getElementById('txt').innerHTML = v
+     }
+ })
+ document.addEventListener('keyup',(e)=>{
+     obj.intxt = e.target.value
+ })
+</script>
+</html>
